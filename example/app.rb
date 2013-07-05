@@ -1,9 +1,7 @@
 #!/usr/bin/env ruby -rubygems
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
-require 'ffi'
 require 'topsurf'
-require 'pry'
 
 IMAGES = ['compare1.jpg', 'compare2.jpg', 'compare3.jpg', 'compare4.jpg']
 DESCRIPTORS = []
