@@ -88,6 +88,14 @@ float topsurf_compareimages(String image1, String image2, String similarity_rb)
   return TopSurf_CompareDescriptors(td1, td2, topsurf_similarity(similarity_rb));
 }
 
+bool topsurf_visualizedescriptor(String fname, String xname)
+{
+  TOPSURF_DESCRIPTOR td;
+  TopSurf_ExtractDescriptor(fname.c_str(), td);
+
+  return TopSurf_VisualizeDescriptorFromImage(fname.c_str(), xname.c_str(), td);
+}
+
 extern "C"
 
 void Init_topsurf()
@@ -103,5 +111,6 @@ void Init_topsurf()
     .define_method("SaveDescriptor", &topsurf_savedescriptor)
     .define_method("CompareDescriptors", &topsurf_comparedescriptors)
     .define_method("CompareImages", &topsurf_compareimages)
+    .define_method("VisualizeDescriptor", &topsurf_visualizedescriptor)
     ;
 }
